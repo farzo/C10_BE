@@ -1,0 +1,12 @@
+
+behind_proxy=false
+bundleExportPath=/Users/farzo/Documents/intalio/Best_Engine
+deploy_bundleShouldBeArchived=false
+deploy_bundleShouldBeDeployed=true
+deploy_gi_serverUrl=http\://lams-esoa-intalio.epfl.ch\:8080/gi
+deploy_serverUrl=http\://lams-esoa-intalio.epfl.ch\:8080/ode
+deploymenttimeout=120
+diagram_baseUri=http\://best_engine.com
+eclipse.preferences.version=1
+type=non.unique
+uuid=84b98090-28a4-460b-803e-12f7dbb01e4d

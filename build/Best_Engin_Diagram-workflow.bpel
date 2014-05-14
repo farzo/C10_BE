@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ode="http://www.apache.org/ode/type/extension" xmlns:this="http://best_engine.com/Best_Engin_Diagram/workflow" xmlns:intf="http://ws_package_Repair_ws.lti.epfl.ch" xmlns:user="http://best_engine.com/Best_Engin_Diagram/user" xmlns:web_server="http://best_engine.com/Best_Engin_Diagram/web_server" xmlns:diag="http://best_engine.com/Best_Engin_Diagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="workflow" name="workflow" bpmn:id="_lVQzUNndEeORaLAw4oWmKg" targetNamespace="http://best_engine.com/Best_Engin_Diagram/workflow">
+  <bpel:import namespace="http://best_engine.com/Best_Engin_Diagram" location="Best_Engin_Diagram.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <bpel:import namespace="http://best_engine.com/Best_Engin_Diagram/workflow" location="Best_Engin_Diagram-workflow.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <bpel:import namespace="http://ws_package_Repair_ws.lti.epfl.ch" location="Downloads/Repair_ws.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <bpel:partnerLinks>
+    <bpel:partnerLink name="workflowAndUserPlkVar" partnerLinkType="diag:workflowAndUser" myRole="workflow_for_user"/>
+    <bpel:partnerLink name="web_serverAndWorkflowForPortRepair_wsPlkVar" partnerLinkType="diag:web_serverAndWorkflowForPortRepair_wsPlk" initializePartnerRole="yes" partnerRole="web_server_for_workflow"/>
+  </bpel:partnerLinks>
+  <bpel:variables>
+    <bpel:variable name="thisEventStartMessageRequest" messageType="this:EventStartMessageRequest"/>
+    <bpel:variable name="thisEventStartMessageResponse" messageType="this:EventStartMessageResponse"/>
+    <bpel:variable name="intfAnalyzeDiagnosticFileRequestMsg" messageType="intf:analyzeDiagnosticFileRequest"/>
+    <bpel:variable name="intfAnalyzeDiagnosticFileResponseMsg" messageType="intf:analyzeDiagnosticFileResponse"/>
+  </bpel:variables>
+  <bpel:sequence>
+    <bpel:receive partnerLink="workflowAndUserPlkVar" portType="this:Foruser" operation="EventStartMessage" variable="thisEventStartMessageRequest" createInstance="yes" bpmn:label="Message_Start_Event" name="Message_Start_Event" bpmn:id="_7AafwNtfEeOp7bPSlow6GQ"></bpel:receive>
+    <bpel:assign name="init-variables-workflow" bpmn:id="_7AafwNtfEeOp7bPSlow6GQ">
+      <bpel:copy bpmn:label="$thisEventStartMessageResponse">
+        <bpel:from>
+          <bpel:literal>
+<this:EventStartMessageResponse></this:EventStartMessageResponse></bpel:literal>
+        </bpel:from>
+        <bpel:to>$thisEventStartMessageResponse.body</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$intfAnalyzeDiagnosticFileRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<intf:analyzeDiagnosticFile>
+  <intf:aCompanyId></intf:aCompanyId>
+</intf:analyzeDiagnosticFile></bpel:literal>
+        </bpel:from>
+        <bpel:to>$intfAnalyzeDiagnosticFileRequestMsg.parameters</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign bpmn:label="Invoke Analysis" name="Invoke_Analysis" bpmn:id="_5AYhsNtfEeOp7bPSlow6GQ">
+      <bpel:copy>
+        <bpel:from>$thisEventStartMessageRequest.body/text()</bpel:from>
+        <bpel:to>$intfAnalyzeDiagnosticFileRequestMsg.parameters/intf:aCompanyId</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:invoke partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" operation="analyzeDiagnosticFile" inputVariable="intfAnalyzeDiagnosticFileRequestMsg" outputVariable="intfAnalyzeDiagnosticFileResponseMsg" bpmn:label="Invoke Analysis" name="Invoke_Analysis-1" bpmn:id="_5AYhsNtfEeOp7bPSlow6GQ"></bpel:invoke>
+    <bpel:assign bpmn:label="Message_End_Event" name="Message_End_Event" bpmn:id="_751bENtfEeOp7bPSlow6GQ">
+      <bpel:copy>
+        <bpel:from>$intfAnalyzeDiagnosticFileResponseMsg.parameters/intf:analyzeDiagnosticFileReturn/text()</bpel:from>
+        <bpel:to>$thisEventStartMessageResponse.body</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:reply partnerLink="workflowAndUserPlkVar" portType="this:Foruser" operation="EventStartMessage" variable="thisEventStartMessageResponse" bpmn:label="Message_End_Event" name="Message_End_Event-1" bpmn:id="_751bENtfEeOp7bPSlow6GQ"></bpel:reply>
+  </bpel:sequence>
+</bpel:process>

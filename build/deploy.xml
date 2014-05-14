@@ -1,0 +1,11 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<dd:deploy xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03"><dd:process xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:diag="http://best_engine.com/Best_Engin_Diagram" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:intf="http://ws_package_Repair_ws.lti.epfl.ch" xmlns:this="http://best_engine.com/Best_Engin_Diagram/workflow" xmlns:user="http://best_engine.com/Best_Engin_Diagram/user" xmlns:web_server="http://best_engine.com/Best_Engin_Diagram/web_server" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="this:workflow" fileName="Best_Engin_Diagram-workflow.bpel">
+  <dd:property name="PATH">Best_Engin_Diagram</dd:property>
+  <dd:property name="SVG">Best_Engin_Diagram.svg</dd:property>
+  <dd:provide partnerLink="workflowAndUserPlkVar">
+    <dd:service name="this:CanonicServiceForuser" port="canonicPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar">
+    <dd:service name="intf:Repair_wsService" port="Repair_ws"></dd:service>
+  </dd:invoke>
+</dd:process></dd:deploy>

@@ -1,0 +1,26 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:diag="http://thisdiagram" xmlns:user="http://thisdiagram/user" xmlns:workflow="http://thisdiagram/workflow" xmlns:intf="http://ws_package_Repair_ws.lti.epfl.ch" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://thisdiagram" bpdm:version="6000089" bpdm:canid="_TErX4NndEeORaLAw4oWmKg" bpdm:displayName="diag">
+  <pnlk:partnerLinkType name="web_serverAndWorkflow" bpdm:poolOneId="_mPHMcNndEeORaLAw4oWmKg" bpdm:poolOneIsExecutable="false" bpdm:poolOneName="web server" bpdm:poolTwoId="_lVQzUNndEeORaLAw4oWmKg" bpdm:poolTwoIsExecutable="true" bpdm:poolTwoName="workflow">
+    <pnlk:role name="web_server_for_workflow" portType="{http://thisdiagram/web_server}Forworkflow" bpdm:thisPoolId="_mPHMcNndEeORaLAw4oWmKg">
+      <wsdl:portType name="Forworkflow">
+        <wsdl:operation name="analyzeDiagnosticFile" bpdm:canid="_5AYhsNtfEeOp7bPSlow6GQ._KFCVgNtgEeOp7bPSlow6GQ." bpdm:dataobjectPointer="project:///Downloads/Repair_ws.wsdl?wsdloperationbound={http://ws_package_Repair_ws.lti.epfl.ch}Repair_wsService/Repair_ws/analyzeDiagnosticFile">
+          <wsdl:input message="intf:analyzeDiagnosticFileRequest" name="analyzeDiagnosticFile" bpdm:canid="_LomaANtgEeOp7bPSlow6GQ" bpdm:senderId="_5AYhsNtfEeOp7bPSlow6GQ" bpdm:receiverId="_KFCVgNtgEeOp7bPSlow6GQ" bpdm:senderName="Invoke Analysis" bpdm:receiverName="analyzeDiagnosticFile" bpdm:receiverPoolId="_mPHMcNndEeORaLAw4oWmKg" bpdm:dataobjectPointer="project:///Downloads/Repair_ws.wsdl?messageForBoundOperation={http://ws_package_Repair_ws.lti.epfl.ch}Repair_wsService/Repair_ws/analyzeDiagnosticFile/input/analyzeDiagnosticFileRequest"></wsdl:input>
+          <wsdl:output message="intf:analyzeDiagnosticFileResponse" name="analyzeDiagnosticFileResponse" bpdm:canid="_MEo1wNtgEeOp7bPSlow6GQ" bpdm:senderId="_KFCVgNtgEeOp7bPSlow6GQ" bpdm:receiverId="_5AYhsNtfEeOp7bPSlow6GQ" bpdm:senderName="analyzeDiagnosticFile" bpdm:receiverName="Invoke Analysis" bpdm:receiverPoolId="_lVQzUNndEeORaLAw4oWmKg" bpdm:dataobjectPointer="project:///Downloads/Repair_ws.wsdl?messageForBoundOperation={http://ws_package_Repair_ws.lti.epfl.ch}Repair_wsService/Repair_ws/analyzeDiagnosticFile/output/analyzeDiagnosticFileResponse"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="web_serverAndWorkflowForPortRepair_wsPlk" bpdm:canPlkId="_mPHMcNndEeORaLAw4oWmKg-_lVQzUNndEeORaLAw4oWmKg">
+    <pnlk:role name="web_server_for_workflow" portType="intf:Repair_ws"></pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="workflowAndUser" bpdm:poolOneId="_lVQzUNndEeORaLAw4oWmKg" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="workflow" bpdm:poolTwoId="_TEr-9NndEeORaLAw4oWmKg" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="user">
+    <pnlk:role name="workflow_for_user" portType="workflow:Foruser" bpdm:thisPoolId="_lVQzUNndEeORaLAw4oWmKg">
+      <wsdl:portType name="Foruser">
+        <wsdl:operation name="EventStartMessage" bpdm:canid="_751bENtfEeOp7bPSlow6GQ._7AafwNtfEeOp7bPSlow6GQ._y9x3cNndEeORaLAw4oWmKg.">
+          <wsdl:input message="workflow:EventStartMessageRequest" name="EventStartMessage" bpdm:canid="_-BedANtfEeOp7bPSlow6GQ" bpdm:senderId="_y9x3cNndEeORaLAw4oWmKg" bpdm:receiverId="_7AafwNtfEeOp7bPSlow6GQ" bpdm:senderName="invoke" bpdm:receiverName="EventStartMessage" bpdm:receiverPoolId="_lVQzUNndEeORaLAw4oWmKg" bpdm:dataobjectPointer="builtin:///xsd?xsdtype={http://www.w3.org/2001/XMLSchema}string" bpdm:bodyPartElemName="EventStartMessageRequest" bpdm:bodyPartElemType="{http://www.w3.org/2001/XMLSchema}string"></wsdl:input>
+          <wsdl:output message="workflow:EventStartMessageResponse" name="EventStartMessageResponse" bpdm:canid="_-iNykNtfEeOp7bPSlow6GQ" bpdm:senderId="_751bENtfEeOp7bPSlow6GQ" bpdm:receiverId="_y9x3cNndEeORaLAw4oWmKg" bpdm:senderName="EventEndMessage" bpdm:receiverName="invoke" bpdm:receiverPoolId="_TEr-9NndEeORaLAw4oWmKg" bpdm:dataobjectPointer="builtin:///xsd?xsdtype={http://www.w3.org/2001/XMLSchema}string" bpdm:bodyPartElemName="EventStartMessageResponse" bpdm:bodyPartElemType="{http://www.w3.org/2001/XMLSchema}string"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+</wsdl:definitions>

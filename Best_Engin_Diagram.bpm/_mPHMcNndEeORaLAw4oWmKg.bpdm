@@ -1,0 +1,33 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:workflow="http://thisdiagram/workflow" xmlns:intf="http://ws_package_Repair_ws.lti.epfl.ch" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:this="http://thisdiagram/web_server" xmlns:diag="http://thisdiagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/web_server">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/workflow" bpdm:prefix="workflow" bpdm:comment="contrib=&apos;partner-pool:///_lVQzUNndEeORaLAw4oWmKg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://ws_package_Repair_ws.lti.epfl.ch" bpdm:prefix="intf" bpdm:comment="contrib=&apos;project:///Downloads/Repair_ws.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/web_server" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_lVQzUNndEeORaLAw4oWmKg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///Downloads/Repair_ws.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_lVQzUNndEeORaLAw4oWmKg" bpdm:label="workflow"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="web server" bpdm:ID="_mPHMcNndEeORaLAw4oWmKg">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="web_serverAndWorkflowForPortRepair_wsPlkVar" partnerLinkType="diag:web_serverAndWorkflowForPortRepair_wsPlk" myRole="web_server_for_workflow" bpdm:enableSharing="false" bpdm:providedService="intf:Repair_wsService" bpdm:providedPort="Repair_ws" bpdm:provideSOAPAddress="http://lams-esoa-world.epfl.ch:8180/ws_2012_1/services/Repair_ws" bpdm:providedIsDefault="true" bpdm:clientTasks="_mPHMcNndEeORaLAw4oWmKg:_KFCVgNtgEeOp7bPSlow6GQ" bpdm:isManaged="true" bpdm:otherPoolId="_lVQzUNndEeORaLAw4oWmKg"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="intfAnalyzeDiagnosticFileRequestMsg" messageType="intf:analyzeDiagnosticFileRequest" binding="intf:Repair_wsSoapBinding" operation="analyzeDiagnosticFile" opMsgType="0" bpdm:id="_Lo-NcNtgEeOp7bPSlow6GQ" bpdm:messageIds="inc:_LomaANtgEeOp7bPSlow6GQ"/>
+            <bpel:variable name="intfAnalyzeDiagnosticFileResponseMsg" messageType="intf:analyzeDiagnosticFileResponse" binding="intf:Repair_wsSoapBinding" operation="analyzeDiagnosticFile" opMsgType="1" bpdm:id="_ME57gNtgEeOp7bPSlow6GQ" bpdm:messageIds=" out:_MEo1wNtgEeOp7bPSlow6GQ">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="intf:analyzeDiagnosticFileResponse" bpdm:linkedPart="parameters" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:opMsgType="1" bpdm:operation="analyzeDiagnosticFile"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="analyzeDiagnosticFile" partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" isMyRole="true" enableSharing="false" bpdm:label="analyzeDiagnosticFile" bpdm:ID="_KFCVgNtgEeOp7bPSlow6GQ">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="intfAnalyzeDiagnosticFileRequestMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:analyzeDiagnosticFileRequest" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_LomaANtgEeOp7bPSlow6GQ"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="intfAnalyzeDiagnosticFileResponseMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:analyzeDiagnosticFileResponse" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_MEo1wNtgEeOp7bPSlow6GQ"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

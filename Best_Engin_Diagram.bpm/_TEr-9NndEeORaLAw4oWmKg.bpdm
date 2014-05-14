@@ -1,0 +1,31 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:workflow="http://thisdiagram/workflow" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:this="http://thisdiagram/user" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diag="http://thisdiagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/user">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/workflow" bpdm:prefix="workflow" bpdm:comment="contrib=&apos;partner-pool:///_lVQzUNndEeORaLAw4oWmKg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/user" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_lVQzUNndEeORaLAw4oWmKg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_lVQzUNndEeORaLAw4oWmKg" bpdm:label="workflow"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="user" bpdm:ID="_TEr-9NndEeORaLAw4oWmKg">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="workflowAndUserPlkVar" partnerLinkType="diag:workflowAndUser" initializePartnerRole="yes" partnerRole="workflow_for_user" bpdm:invokedService="workflow:CanonicServiceForuser" bpdm:invokedPort="canonicPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/workflow/user" bpdm:invokedIsDefault="true" bpdm:clientTasks="_TEr-9NndEeORaLAw4oWmKg:_y9x3cNndEeORaLAw4oWmKg" bpdm:isManaged="true" bpdm:otherPoolId="_lVQzUNndEeORaLAw4oWmKg"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="workflowEventStartMessageRequest" messageType="workflow:EventStartMessageRequest" bpdm:id="_-BhgUNtfEeOp7bPSlow6GQ" bpdm:messageIds=" out:_-BedANtfEeOp7bPSlow6GQ">
+                <bpel:from bpdm:toPart="body">
+                    <bpel:literal bpdm:linkedMessageType="workflow:EventStartMessageRequest" bpdm:linkedPart="body"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="workflowEventStartMessageResponse" messageType="workflow:EventStartMessageResponse" bpdm:id="_-iWVcNtfEeOp7bPSlow6GQ" bpdm:messageIds="inc:_-iNykNtfEeOp7bPSlow6GQ"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="EventStartMessage" partnerLink="workflowAndUserPlkVar" portType="workflow:Foruser" isMyRole="false" enableSharing="false" bpdm:label="invoke" bpdm:ID="_y9x3cNndEeORaLAw4oWmKg">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="workflowEventStartMessageRequest" bpdm:msgVarScopeId="_TEr-9NndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="workflow:EventStartMessageRequest" bpdm:ID="_-BedANtfEeOp7bPSlow6GQ"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="workflowEventStartMessageResponse" bpdm:msgVarScopeId="_TEr-9NndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="workflow:EventStartMessageResponse" bpdm:ID="_-iNykNtfEeOp7bPSlow6GQ"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>
