@@ -19,12 +19,12 @@
                     <bpel:literal bpdm:linkedMessageType="workflow:EventStartMessageRequest" bpdm:linkedPart="body"></bpel:literal>
                 </bpel:from>
             </bpel:variable>
-            <bpel:variable name="workflowEventStartMessageResponse" messageType="workflow:EventStartMessageResponse" bpdm:id="_-iWVcNtfEeOp7bPSlow6GQ" bpdm:messageIds="inc:_-iNykNtfEeOp7bPSlow6GQ"/>
+            <bpel:variable name="workflowEventStartMessageResponse" messageType="workflow:EventStartMessageResponse" bpdm:id="_ObF6VdthEeOp7bPSlow6GQ" bpdm:messageIds="inc:_Oa5GANthEeOp7bPSlow6GQ"/>
         </bpel:variables>
         <bpel:sequence>
             <bpdm:messagingtask operation="EventStartMessage" partnerLink="workflowAndUserPlkVar" portType="workflow:Foruser" isMyRole="false" enableSharing="false" bpdm:label="invoke" bpdm:ID="_y9x3cNndEeORaLAw4oWmKg">
                 <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="workflowEventStartMessageRequest" bpdm:msgVarScopeId="_TEr-9NndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="workflow:EventStartMessageRequest" bpdm:ID="_-BedANtfEeOp7bPSlow6GQ"></bpdm:linkset>
-                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="workflowEventStartMessageResponse" bpdm:msgVarScopeId="_TEr-9NndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="workflow:EventStartMessageResponse" bpdm:ID="_-iNykNtfEeOp7bPSlow6GQ"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="workflowEventStartMessageResponse" bpdm:msgVarScopeId="_TEr-9NndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="workflow:EventStartMessageResponse" bpdm:ID="_Oa5GANthEeOp7bPSlow6GQ"></bpdm:linkset>
             </bpdm:messagingtask>
         </bpel:sequence>
     </bpel:scope>

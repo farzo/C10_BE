@@ -31,21 +31,27 @@
     <bpel:scope bpdm:label="workflow" bpdm:ID="_lVQzUNndEeORaLAw4oWmKg">
         <bpel:partnerLinks>
             <bpel:partnerLink name="workflowAndUserPlkVar" partnerLinkType="diag:workflowAndUser" myRole="workflow_for_user" bpdm:enableSharing="false" bpdm:providedService="this:CanonicServiceForuser" bpdm:providedPort="canonicPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/workflow/user" bpdm:providedIsDefault="true" bpdm:clientTasks="_lVQzUNndEeORaLAw4oWmKg:_751bENtfEeOp7bPSlow6GQ, _lVQzUNndEeORaLAw4oWmKg:_7AafwNtfEeOp7bPSlow6GQ" bpdm:isManaged="true" bpdm:otherPoolId="_TEr-9NndEeORaLAw4oWmKg"/>
-            <bpel:partnerLink name="web_serverAndWorkflowForPortRepair_wsPlkVar" partnerLinkType="diag:web_serverAndWorkflowForPortRepair_wsPlk" initializePartnerRole="yes" partnerRole="web_server_for_workflow" bpdm:invokedService="intf:Repair_wsService" bpdm:invokedPort="Repair_ws" bpdm:invokedSOAPAddress="http://lams-esoa-world.epfl.ch:8180/ws_2012_1/services/Repair_ws" bpdm:invokedIsDefault="true" bpdm:clientTasks="_lVQzUNndEeORaLAw4oWmKg:_5AYhsNtfEeOp7bPSlow6GQ" bpdm:isManaged="true" bpdm:otherPoolId="_mPHMcNndEeORaLAw4oWmKg"/>
+            <bpel:partnerLink name="web_serverAndWorkflowForPortRepair_wsPlkVar" partnerLinkType="diag:web_serverAndWorkflowForPortRepair_wsPlk" initializePartnerRole="yes" partnerRole="web_server_for_workflow" bpdm:invokedService="intf:Repair_wsService" bpdm:invokedPort="Repair_ws" bpdm:invokedSOAPAddress="http://lams-esoa-world.epfl.ch:8180/ws_2012_1/services/Repair_ws" bpdm:invokedIsDefault="true" bpdm:clientTasks="_lVQzUNndEeORaLAw4oWmKg:_5WPAcNtgEeOp7bPSlow6GQ, _lVQzUNndEeORaLAw4oWmKg:_5AYhsNtfEeOp7bPSlow6GQ" bpdm:isManaged="true" bpdm:otherPoolId="_mPHMcNndEeORaLAw4oWmKg"/>
         </bpel:partnerLinks>
         <bpel:variables>
             <bpel:variable name="thisEventStartMessageRequest" messageType="this:EventStartMessageRequest" bpdm:id="_-BlKsNtfEeOp7bPSlow6GQ" bpdm:messageIds="inc:_-BedANtfEeOp7bPSlow6GQ"/>
-            <bpel:variable name="thisEventStartMessageResponse" messageType="this:EventStartMessageResponse" bpdm:id="_-iQ14NtfEeOp7bPSlow6GQ" bpdm:messageIds=" out:_-iNykNtfEeOp7bPSlow6GQ">
-                <bpel:from bpdm:toPart="body">
-                    <bpel:literal bpdm:linkedMessageType="this:EventStartMessageResponse" bpdm:linkedPart="body"></bpel:literal>
-                </bpel:from>
-            </bpel:variable>
             <bpel:variable name="intfAnalyzeDiagnosticFileRequestMsg" messageType="intf:analyzeDiagnosticFileRequest" binding="intf:Repair_wsSoapBinding" operation="analyzeDiagnosticFile" opMsgType="0" bpdm:id="_Lo0ccNtgEeOp7bPSlow6GQ" bpdm:messageIds=" out:_LomaANtgEeOp7bPSlow6GQ">
                 <bpel:from bpdm:toPart="parameters">
                     <bpel:literal bpdm:linkedMessageType="intf:analyzeDiagnosticFileRequest" bpdm:linkedPart="parameters" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:opMsgType="0" bpdm:operation="analyzeDiagnosticFile"></bpel:literal>
                 </bpel:from>
             </bpel:variable>
             <bpel:variable name="intfAnalyzeDiagnosticFileResponseMsg" messageType="intf:analyzeDiagnosticFileResponse" binding="intf:Repair_wsSoapBinding" operation="analyzeDiagnosticFile" opMsgType="1" bpdm:id="_MFBQQNtgEeOp7bPSlow6GQ" bpdm:messageIds="inc:_MEo1wNtgEeOp7bPSlow6GQ"/>
+            <bpel:variable name="thisEventStartMessageResponse" messageType="this:EventStartMessageResponse" bpdm:id="_Oa8JUNthEeOp7bPSlow6GQ" bpdm:messageIds=" out:_Oa5GANthEeOp7bPSlow6GQ">
+                <bpel:from bpdm:toPart="body">
+                    <bpel:literal bpdm:linkedMessageType="this:EventStartMessageResponse" bpdm:linkedPart="body"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="intfGetPartIdFromDiagnosticFileRequestMsg" messageType="intf:getPartIdFromDiagnosticFileRequest" binding="intf:Repair_wsSoapBinding" operation="getPartIdFromDiagnosticFile" opMsgType="0" bpdm:id="_SVt80NthEeOp7bPSlow6GQ" bpdm:messageIds=" out:_SVf6YNthEeOp7bPSlow6GQ">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="intf:getPartIdFromDiagnosticFileRequest" bpdm:linkedPart="parameters" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:opMsgType="0" bpdm:operation="getPartIdFromDiagnosticFile"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="intfGetPartIdFromDiagnosticFileResponseMsg" messageType="intf:getPartIdFromDiagnosticFileResponse" binding="intf:Repair_wsSoapBinding" operation="getPartIdFromDiagnosticFile" opMsgType="1" bpdm:id="_Tn_dBdthEeOp7bPSlow6GQ" bpdm:messageIds="inc:_TncqcNthEeOp7bPSlow6GQ"/>
         </bpel:variables>
         <bpel:sequence>
             <bpdm:messagingtask eventType="start: message" operation="EventStartMessage" partnerLink="workflowAndUserPlkVar" portType="this:Foruser" isMyRole="true" enableSharing="false" bpdm:label="Message_Start_Event" bpdm:ID="_7AafwNtfEeOp7bPSlow6GQ">
@@ -65,18 +71,32 @@
                 <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="intfAnalyzeDiagnosticFileRequestMsg" bpdm:msgVarScopeId="_lVQzUNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:analyzeDiagnosticFileRequest" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_LomaANtgEeOp7bPSlow6GQ"></bpdm:linkset>
                 <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="intfAnalyzeDiagnosticFileResponseMsg" bpdm:msgVarScopeId="_lVQzUNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:analyzeDiagnosticFileResponse" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_MEo1wNtgEeOp7bPSlow6GQ"></bpdm:linkset>
             </bpdm:messagingtask>
-            <bpdm:messagingtask eventType="end: message" operation="EventStartMessage" partnerLink="workflowAndUserPlkVar" portType="this:Foruser" isMyRole="true" enableSharing="false" bpdm:label="Message_End_Event" bpdm:ID="_751bENtfEeOp7bPSlow6GQ">
+            <bpdm:messagingtask operation="getPartIdFromDiagnosticFile" partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" isMyRole="false" enableSharing="false" bpdm:label="Invoke GetPartId" bpdm:ID="_5WPAcNtgEeOp7bPSlow6GQ">
                 <bpdm:linkset bpdm:type="assignments">
                     <bpel:copy>
                         <bpel:from>$intfAnalyzeDiagnosticFileResponseMsg.parameters/intf:analyzeDiagnosticFileReturn/text()</bpel:from>
-                        <bpel:to>$thisEventStartMessageResponse.body/text()</bpel:to>
+                        <bpel:to>$intfGetPartIdFromDiagnosticFileRequestMsg.parameters/intf:aFileId/text()</bpel:to>
 <mapper:mapperLink>
-  <mapper:vertice id="31231641" targetPath="$thisEventStartMessageResponse.body/text()" targetedBy="22284729-arg0"></mapper:vertice>
-  <mapper:vertice id="22284729" sourcePath="$intfAnalyzeDiagnosticFileResponseMsg.parameters/intf:analyzeDiagnosticFileReturn/text()"></mapper:vertice>
+  <mapper:vertice id="4061246" targetPath="$intfGetPartIdFromDiagnosticFileRequestMsg.parameters/intf:aFileId/text()" targetedBy="5033518-arg0"></mapper:vertice>
+  <mapper:vertice id="5033518" sourcePath="$intfAnalyzeDiagnosticFileResponseMsg.parameters/intf:analyzeDiagnosticFileReturn/text()"></mapper:vertice>
 </mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>
-                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="thisEventStartMessageResponse" bpdm:msgVarScopeId="_lVQzUNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="this:EventStartMessageResponse" bpdm:ID="_-iNykNtfEeOp7bPSlow6GQ"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="intfGetPartIdFromDiagnosticFileRequestMsg" bpdm:msgVarScopeId="_lVQzUNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getPartIdFromDiagnosticFileRequest" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_SVf6YNthEeOp7bPSlow6GQ"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="intfGetPartIdFromDiagnosticFileResponseMsg" bpdm:msgVarScopeId="_lVQzUNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getPartIdFromDiagnosticFileResponse" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_TncqcNthEeOp7bPSlow6GQ"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask eventType="end: message" operation="EventStartMessage" partnerLink="workflowAndUserPlkVar" portType="this:Foruser" isMyRole="true" enableSharing="false" bpdm:label="Message_End_Event" bpdm:ID="_751bENtfEeOp7bPSlow6GQ">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$intfGetPartIdFromDiagnosticFileResponseMsg.parameters/intf:getPartIdFromDiagnosticFileReturn/text()</bpel:from>
+                        <bpel:to>$thisEventStartMessageResponse.body/text()</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="16818439" targetPath="$thisEventStartMessageResponse.body/text()" targetedBy="28009372-arg0"></mapper:vertice>
+  <mapper:vertice id="28009372" sourcePath="$intfGetPartIdFromDiagnosticFileResponseMsg.parameters/intf:getPartIdFromDiagnosticFileReturn/text()"></mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="thisEventStartMessageResponse" bpdm:msgVarScopeId="_lVQzUNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="this:EventStartMessageResponse" bpdm:ID="_Oa5GANthEeOp7bPSlow6GQ"></bpdm:linkset>
             </bpdm:messagingtask>
         </bpel:sequence>
     </bpel:scope>

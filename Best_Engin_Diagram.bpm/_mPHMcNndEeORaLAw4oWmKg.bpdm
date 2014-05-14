@@ -13,7 +13,7 @@
     </bpdm:dependencies>
     <bpel:scope bpdm:label="web server" bpdm:ID="_mPHMcNndEeORaLAw4oWmKg">
         <bpel:partnerLinks>
-            <bpel:partnerLink name="web_serverAndWorkflowForPortRepair_wsPlkVar" partnerLinkType="diag:web_serverAndWorkflowForPortRepair_wsPlk" myRole="web_server_for_workflow" bpdm:enableSharing="false" bpdm:providedService="intf:Repair_wsService" bpdm:providedPort="Repair_ws" bpdm:provideSOAPAddress="http://lams-esoa-world.epfl.ch:8180/ws_2012_1/services/Repair_ws" bpdm:providedIsDefault="true" bpdm:clientTasks="_mPHMcNndEeORaLAw4oWmKg:_KFCVgNtgEeOp7bPSlow6GQ" bpdm:isManaged="true" bpdm:otherPoolId="_lVQzUNndEeORaLAw4oWmKg"/>
+            <bpel:partnerLink name="web_serverAndWorkflowForPortRepair_wsPlkVar" partnerLinkType="diag:web_serverAndWorkflowForPortRepair_wsPlk" myRole="web_server_for_workflow" bpdm:enableSharing="false" bpdm:providedService="intf:Repair_wsService" bpdm:providedPort="Repair_ws" bpdm:provideSOAPAddress="http://lams-esoa-world.epfl.ch:8180/ws_2012_1/services/Repair_ws" bpdm:providedIsDefault="true" bpdm:clientTasks="_mPHMcNndEeORaLAw4oWmKg:_RStnsdthEeOp7bPSlow6GQ, _mPHMcNndEeORaLAw4oWmKg:_KFCVgNtgEeOp7bPSlow6GQ" bpdm:isManaged="true" bpdm:otherPoolId="_lVQzUNndEeORaLAw4oWmKg"/>
         </bpel:partnerLinks>
         <bpel:variables>
             <bpel:variable name="intfAnalyzeDiagnosticFileRequestMsg" messageType="intf:analyzeDiagnosticFileRequest" binding="intf:Repair_wsSoapBinding" operation="analyzeDiagnosticFile" opMsgType="0" bpdm:id="_Lo-NcNtgEeOp7bPSlow6GQ" bpdm:messageIds="inc:_LomaANtgEeOp7bPSlow6GQ"/>
@@ -22,12 +22,26 @@
                     <bpel:literal bpdm:linkedMessageType="intf:analyzeDiagnosticFileResponse" bpdm:linkedPart="parameters" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:opMsgType="1" bpdm:operation="analyzeDiagnosticFile"></bpel:literal>
                 </bpel:from>
             </bpel:variable>
+            <bpel:variable name="intfGetPartIdFromDiagnosticFileRequestMsg" messageType="intf:getPartIdFromDiagnosticFileRequest" binding="intf:Repair_wsSoapBinding" operation="getPartIdFromDiagnosticFile" opMsgType="0" bpdm:id="_SV6xINthEeOp7bPSlow6GQ" bpdm:messageIds="inc:_SVf6YNthEeOp7bPSlow6GQ"/>
+            <bpel:variable name="intfGetPartIdFromDiagnosticFileResponseMsg" messageType="intf:getPartIdFromDiagnosticFileResponse" binding="intf:Repair_wsSoapBinding" operation="getPartIdFromDiagnosticFile" opMsgType="1" bpdm:id="_Tn1E8NthEeOp7bPSlow6GQ" bpdm:messageIds=" out:_TncqcNthEeOp7bPSlow6GQ">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="intf:getPartIdFromDiagnosticFileResponse" bpdm:linkedPart="parameters" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:opMsgType="1" bpdm:operation="getPartIdFromDiagnosticFile"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
         </bpel:variables>
-        <bpel:sequence>
-            <bpdm:messagingtask operation="analyzeDiagnosticFile" partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" isMyRole="true" enableSharing="false" bpdm:label="analyzeDiagnosticFile" bpdm:ID="_KFCVgNtgEeOp7bPSlow6GQ">
-                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="intfAnalyzeDiagnosticFileRequestMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:analyzeDiagnosticFileRequest" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_LomaANtgEeOp7bPSlow6GQ"></bpdm:linkset>
-                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="intfAnalyzeDiagnosticFileResponseMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:analyzeDiagnosticFileResponse" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_MEo1wNtgEeOp7bPSlow6GQ"></bpdm:linkset>
-            </bpdm:messagingtask>
-        </bpel:sequence>
+        <bpel:flow>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="getPartIdFromDiagnosticFile" partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" isMyRole="true" enableSharing="false" bpdm:label="getPartIdFromDiagnosticFile" bpdm:ID="_RStnsdthEeOp7bPSlow6GQ">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="intfGetPartIdFromDiagnosticFileRequestMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getPartIdFromDiagnosticFileRequest" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_SVf6YNthEeOp7bPSlow6GQ"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="intfGetPartIdFromDiagnosticFileResponseMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getPartIdFromDiagnosticFileResponse" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_TncqcNthEeOp7bPSlow6GQ"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="analyzeDiagnosticFile" partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" isMyRole="true" enableSharing="false" bpdm:label="analyzeDiagnosticFile" bpdm:ID="_KFCVgNtgEeOp7bPSlow6GQ">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="intfAnalyzeDiagnosticFileRequestMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:analyzeDiagnosticFileRequest" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_LomaANtgEeOp7bPSlow6GQ"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="intfAnalyzeDiagnosticFileResponseMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:analyzeDiagnosticFileResponse" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_MEo1wNtgEeOp7bPSlow6GQ"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+        </bpel:flow>
     </bpel:scope>
 </bpel:process>
