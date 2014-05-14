@@ -14,6 +14,8 @@
     <bpel:variable name="thisEventStartMessageResponse" messageType="this:EventStartMessageResponse"/>
     <bpel:variable name="intfGetPartIdFromDiagnosticFileRequestMsg" messageType="intf:getPartIdFromDiagnosticFileRequest"/>
     <bpel:variable name="intfGetPartIdFromDiagnosticFileResponseMsg" messageType="intf:getPartIdFromDiagnosticFileResponse"/>
+    <bpel:variable name="intfGetAvailabilityOfPartRequestMsg" messageType="intf:getAvailabilityOfPartRequest"/>
+    <bpel:variable name="intfGetAvailabilityOfPartResponseMsg" messageType="intf:getAvailabilityOfPartResponse"/>
   </bpel:variables>
   <bpel:sequence>
     <bpel:receive partnerLink="workflowAndUserPlkVar" portType="this:Foruser" operation="EventStartMessage" variable="thisEventStartMessageRequest" createInstance="yes" bpmn:label="Message_Start_Event" name="Message_Start_Event" bpmn:id="_7AafwNtfEeOp7bPSlow6GQ"></bpel:receive>
@@ -43,6 +45,16 @@
         </bpel:from>
         <bpel:to>$intfGetPartIdFromDiagnosticFileRequestMsg.parameters</bpel:to>
       </bpel:copy>
+      <bpel:copy bpmn:label="$intfGetAvailabilityOfPartRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<intf:getAvailabilityOfPart>
+  <intf:aFileId></intf:aFileId>
+  <intf:aPartId></intf:aPartId>
+</intf:getAvailabilityOfPart></bpel:literal>
+        </bpel:from>
+        <bpel:to>$intfGetAvailabilityOfPartRequestMsg.parameters</bpel:to>
+      </bpel:copy>
     </bpel:assign>
     <bpel:assign bpmn:label="Invoke Analysis" name="Invoke_Analysis" bpmn:id="_5AYhsNtfEeOp7bPSlow6GQ">
       <bpel:copy>
@@ -58,9 +70,20 @@
       </bpel:copy>
     </bpel:assign>
     <bpel:invoke partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" operation="getPartIdFromDiagnosticFile" inputVariable="intfGetPartIdFromDiagnosticFileRequestMsg" outputVariable="intfGetPartIdFromDiagnosticFileResponseMsg" bpmn:label="Invoke GetPartId" name="Invoke_GetPartId-1" bpmn:id="_5WPAcNtgEeOp7bPSlow6GQ"></bpel:invoke>
-    <bpel:assign bpmn:label="Message_End_Event" name="Message_End_Event" bpmn:id="_751bENtfEeOp7bPSlow6GQ">
+    <bpel:assign bpmn:label="Invoke Availabilty" name="Invoke_Availabilty" bpmn:id="_zgxzgNthEeOp7bPSlow6GQ">
+      <bpel:copy>
+        <bpel:from>$intfAnalyzeDiagnosticFileResponseMsg.parameters/intf:analyzeDiagnosticFileReturn/text()</bpel:from>
+        <bpel:to>$intfGetAvailabilityOfPartRequestMsg.parameters/intf:aFileId</bpel:to>
+      </bpel:copy>
       <bpel:copy>
         <bpel:from>$intfGetPartIdFromDiagnosticFileResponseMsg.parameters/intf:getPartIdFromDiagnosticFileReturn/text()</bpel:from>
+        <bpel:to>$intfGetAvailabilityOfPartRequestMsg.parameters/intf:aPartId</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:invoke partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" operation="getAvailabilityOfPart" inputVariable="intfGetAvailabilityOfPartRequestMsg" outputVariable="intfGetAvailabilityOfPartResponseMsg" bpmn:label="Invoke Availabilty" name="Invoke_Availabilty-1" bpmn:id="_zgxzgNthEeOp7bPSlow6GQ"></bpel:invoke>
+    <bpel:assign bpmn:label="Message_End_Event" name="Message_End_Event" bpmn:id="_751bENtfEeOp7bPSlow6GQ">
+      <bpel:copy>
+        <bpel:from>$intfGetAvailabilityOfPartResponseMsg.parameters/intf:getAvailabilityOfPartReturn/text()</bpel:from>
         <bpel:to>$thisEventStartMessageResponse.body</bpel:to>
       </bpel:copy>
     </bpel:assign>

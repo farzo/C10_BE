@@ -106,6 +106,30 @@
         </eAnnotations>
       </associations>
     </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="__omg8dthEeOp7bPSlow6GQ" iD="__omg8NthEeOp7bPSlow6GQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__omg8tthEeOp7bPSlow6GQ" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__omg89thEeOp7bPSlow6GQ" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__owR8tthEeOp7bPSlow6GQ" key="defaultDeclarationName" value="intfGetAvailabilityOfPartRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__o5b4NthEeOp7bPSlow6GQ" key="douri2" value="builtin:///diagram?wsdlmessage={http://ws_package_Repair_ws.lti.epfl.ch}getAvailabilityOfPartRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="__ozVQNthEeOp7bPSlow6GQ" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__o2YkNthEeOp7bPSlow6GQ" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__o400NthEeOp7bPSlow6GQ" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_AKyoAdtiEeOp7bPSlow6GQ" iD="_AKyoANtiEeOp7bPSlow6GQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AKyoAttiEeOp7bPSlow6GQ" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AKyoA9tiEeOp7bPSlow6GQ" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AK5VsttiEeOp7bPSlow6GQ" key="defaultDeclarationName" value="intfGetAvailabilityOfPartResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ALGxENtiEeOp7bPSlow6GQ" key="douri2" value="builtin:///diagram?wsdlmessage={http://ws_package_Repair_ws.lti.epfl.ch}getAvailabilityOfPartResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_AK8ZANtiEeOp7bPSlow6GQ" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AK_cUNtiEeOp7bPSlow6GQ" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ALDGsNtiEeOp7bPSlow6GQ" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
     <vertices xmi:type="bpmn:Activity" xmi:id="_5AYhsdtfEeOp7bPSlow6GQ" iD="_5AYhsNtfEeOp7bPSlow6GQ" associations="_Lo58ANtgEeOp7bPSlow6GQ _MFHW4NtgEeOp7bPSlow6GQ" outgoingEdges="_LM9KYdthEeOp7bPSlow6GQ" incomingEdges="_-_CRcdtfEeOp7bPSlow6GQ" name="Invoke Analysis">
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_LomaAdtgEeOp7bPSlow6GQ"/>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_MEo1wdtgEeOp7bPSlow6GQ"/>
@@ -113,16 +137,21 @@
     <vertices xmi:type="bpmn:Activity" xmi:id="_7AafwdtfEeOp7bPSlow6GQ" iD="_7AafwNtfEeOp7bPSlow6GQ" associations="_-Bm_4NtfEeOp7bPSlow6GQ" outgoingEdges="_-_CRcdtfEeOp7bPSlow6GQ" activityType="EventStartMessage">
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_-BedAdtfEeOp7bPSlow6GQ"/>
     </vertices>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_751bEdtfEeOp7bPSlow6GQ" iD="_751bENtfEeOp7bPSlow6GQ" associations="_ObBo4NthEeOp7bPSlow6GQ" incomingEdges="_L4dlgdthEeOp7bPSlow6GQ" activityType="EventEndMessage">
+    <vertices xmi:type="bpmn:Activity" xmi:id="_751bEdtfEeOp7bPSlow6GQ" iD="_751bENtfEeOp7bPSlow6GQ" associations="_ObBo4NthEeOp7bPSlow6GQ" incomingEdges="_A5ZacdtiEeOp7bPSlow6GQ" activityType="EventEndMessage">
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_Oa5GAdthEeOp7bPSlow6GQ"/>
     </vertices>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_5WPngNtgEeOp7bPSlow6GQ" iD="_5WPAcNtgEeOp7bPSlow6GQ" associations="_SV1RkNthEeOp7bPSlow6GQ _ToH_4NthEeOp7bPSlow6GQ" outgoingEdges="_L4dlgdthEeOp7bPSlow6GQ" incomingEdges="_LM9KYdthEeOp7bPSlow6GQ" name="Invoke GetPartId">
+    <vertices xmi:type="bpmn:Activity" xmi:id="_5WPngNtgEeOp7bPSlow6GQ" iD="_5WPAcNtgEeOp7bPSlow6GQ" associations="_SV1RkNthEeOp7bPSlow6GQ _ToH_4NthEeOp7bPSlow6GQ" outgoingEdges="_3rDbkdthEeOp7bPSlow6GQ" incomingEdges="_LM9KYdthEeOp7bPSlow6GQ" name="Invoke GetPartId">
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_SVf6YdthEeOp7bPSlow6GQ"/>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_TncqcdthEeOp7bPSlow6GQ"/>
     </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_zgxzgdthEeOp7bPSlow6GQ" iD="_zgxzgNthEeOp7bPSlow6GQ" associations="__ozVQNthEeOp7bPSlow6GQ _AK8ZANtiEeOp7bPSlow6GQ" outgoingEdges="_A5ZacdtiEeOp7bPSlow6GQ" incomingEdges="_3rDbkdthEeOp7bPSlow6GQ" name="Invoke Availabilty">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#__oXQYdthEeOp7bPSlow6GQ"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_AKRqodtiEeOp7bPSlow6GQ"/>
+    </vertices>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_-_CRcdtfEeOp7bPSlow6GQ" iD="_-_CRcNtfEeOp7bPSlow6GQ"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_LM9KYdthEeOp7bPSlow6GQ" iD="_LM9KYNthEeOp7bPSlow6GQ"/>
-    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_L4dlgdthEeOp7bPSlow6GQ" iD="_L4dlgNthEeOp7bPSlow6GQ"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_3rDbkdthEeOp7bPSlow6GQ" iD="_3rDbkNthEeOp7bPSlow6GQ"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_A5ZacdtiEeOp7bPSlow6GQ" iD="_A5ZacNtiEeOp7bPSlow6GQ"/>
   </pools>
   <pools xmi:type="bpmn:Pool" xmi:id="_mPHMcdndEeORaLAw4oWmKg" iD="_mPHMcNndEeORaLAw4oWmKg" name="web server">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_o0Hf0NndEeORaLAw4oWmKg" source="executablepool">
@@ -176,6 +205,30 @@
         </eAnnotations>
       </associations>
     </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="__o6C9tthEeOp7bPSlow6GQ" iD="__o6C9dthEeOp7bPSlow6GQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__o6C99thEeOp7bPSlow6GQ" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__o6C-NthEeOp7bPSlow6GQ" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__o-UYtthEeOp7bPSlow6GQ" key="defaultDeclarationName" value="intfGetAvailabilityOfPartRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__pDz8dthEeOp7bPSlow6GQ" key="douri2" value="builtin:///diagram?wsdlmessage={http://ws_package_Repair_ws.lti.epfl.ch}getAvailabilityOfPartRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="__pAJkNthEeOp7bPSlow6GQ" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__pB-wNthEeOp7bPSlow6GQ" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__pDz8NthEeOp7bPSlow6GQ" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_AKklkdtiEeOp7bPSlow6GQ" iD="_AKklkNtiEeOp7bPSlow6GQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AKklkttiEeOp7bPSlow6GQ" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AKklk9tiEeOp7bPSlow6GQ" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AKqFIdtiEeOp7bPSlow6GQ" key="defaultDeclarationName" value="intfGetAvailabilityOfPartResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AKxZ4dtiEeOp7bPSlow6GQ" key="douri2" value="builtin:///diagram?wsdlmessage={http://ws_package_Repair_ws.lti.epfl.ch}getAvailabilityOfPartResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_AKtIcNtiEeOp7bPSlow6GQ" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AKu9oNtiEeOp7bPSlow6GQ" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AKxZ4NtiEeOp7bPSlow6GQ" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
     <vertices xmi:type="bpmn:Activity" xmi:id="_KFFY2NtgEeOp7bPSlow6GQ" iD="_KFCVgNtgEeOp7bPSlow6GQ" associations="_LpApsNtgEeOp7bPSlow6GQ _ME9l4NtgEeOp7bPSlow6GQ" name="analyzeDiagnosticFile" activityType="Task">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KFFY2dtgEeOp7bPSlow6GQ" source="attachedDataobject">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KFFY2ttgEeOp7bPSlow6GQ" key="douri" value="project:///Downloads/Repair_ws.wsdl?wsdloperationbound={http://ws_package_Repair_ws.lti.epfl.ch}Repair_wsService/Repair_ws/analyzeDiagnosticFile"/>
@@ -189,6 +242,13 @@
       </eAnnotations>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_SVf6YdthEeOp7bPSlow6GQ"/>
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_TncqcdthEeOp7bPSlow6GQ"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_-RfkGNthEeOp7bPSlow6GQ" iD="_-Rdu4NthEeOp7bPSlow6GQ" associations="__pAJkNthEeOp7bPSlow6GQ _AKtIcNtiEeOp7bPSlow6GQ" name="getAvailabilityOfPart" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-RfkGdthEeOp7bPSlow6GQ" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-RfkGtthEeOp7bPSlow6GQ" key="douri" value="project:///Downloads/Repair_ws.wsdl?wsdloperationbound={http://ws_package_Repair_ws.lti.epfl.ch}Repair_wsService/Repair_ws/getAvailabilityOfPart"/>
+      </eAnnotations>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#__oXQYdthEeOp7bPSlow6GQ"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_AKRqodtiEeOp7bPSlow6GQ"/>
     </vertices>
   </pools>
   <messages xmi:type="bpmn:MessagingEdge" xmi:id="_-BedAdtfEeOp7bPSlow6GQ" iD="_-BedANtfEeOp7bPSlow6GQ" source="_y9x3cdndEeORaLAw4oWmKg" target="_7AafwdtfEeOp7bPSlow6GQ">
@@ -221,6 +281,16 @@
   <messages xmi:type="bpmn:MessagingEdge" xmi:id="_TncqcdthEeOp7bPSlow6GQ" iD="_TncqcNthEeOp7bPSlow6GQ" source="_RSwD-NthEeOp7bPSlow6GQ" target="_5WPngNtgEeOp7bPSlow6GQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Tno3sNthEeOp7bPSlow6GQ" source="attachedDataobject">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Tno3sdthEeOp7bPSlow6GQ" key="douri" value="project:///Downloads/Repair_ws.wsdl?messageForBoundOperation={http://ws_package_Repair_ws.lti.epfl.ch}Repair_wsService/Repair_ws/getPartIdFromDiagnosticFile/output/getPartIdFromDiagnosticFileResponse"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="__oXQYdthEeOp7bPSlow6GQ" iD="__oXQYNthEeOp7bPSlow6GQ" source="_zgxzgdthEeOp7bPSlow6GQ" target="_-RfkGNthEeOp7bPSlow6GQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__ocI4NthEeOp7bPSlow6GQ" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__ocI4dthEeOp7bPSlow6GQ" key="douri" value="project:///Downloads/Repair_ws.wsdl?messageForBoundOperation={http://ws_package_Repair_ws.lti.epfl.ch}Repair_wsService/Repair_ws/getAvailabilityOfPart/input/getAvailabilityOfPartRequest"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_AKRqodtiEeOp7bPSlow6GQ" iD="_AKRqoNtiEeOp7bPSlow6GQ" source="_-RfkGNthEeOp7bPSlow6GQ" target="_zgxzgdthEeOp7bPSlow6GQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AKXKMNtiEeOp7bPSlow6GQ" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AKXKMdtiEeOp7bPSlow6GQ" key="douri" value="project:///Downloads/Repair_ws.wsdl?messageForBoundOperation={http://ws_package_Repair_ws.lti.epfl.ch}Repair_wsService/Repair_ws/getAvailabilityOfPart/output/getAvailabilityOfPartResponse"/>
     </eAnnotations>
   </messages>
 </bpmn:BpmnDiagram>
