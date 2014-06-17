@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ode="http://www.apache.org/ode/type/extension" xmlns:this="http://best_engine.com/Best_Engin_Diagram/workflow" xmlns:intf="http://ws_package_Repair_ws.lti.epfl.ch" xmlns:user="http://best_engine.com/Best_Engin_Diagram/user" xmlns:web_server="http://best_engine.com/Best_Engin_Diagram/web_server" xmlns:diag="http://best_engine.com/Best_Engin_Diagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="workflow" name="workflow" bpmn:id="_lVQzUNndEeORaLAw4oWmKg" targetNamespace="http://best_engine.com/Best_Engin_Diagram/workflow">
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ode="http://www.apache.org/ode/type/extension" xmlns:this="http://best_engine.com/Best_Engin_Diagram/workflow" xmlns:tns="http://www.example.org/BESchema" xmlns:intf="http://ws_package_Repair_ws.lti.epfl.ch" xmlns:user="http://best_engine.com/Best_Engin_Diagram/user" xmlns:web_server="http://best_engine.com/Best_Engin_Diagram/web_server" xmlns:diag="http://best_engine.com/Best_Engin_Diagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="workflow" name="workflow" bpmn:id="_lVQzUNndEeORaLAw4oWmKg" targetNamespace="http://best_engine.com/Best_Engin_Diagram/workflow">
   <bpel:import namespace="http://best_engine.com/Best_Engin_Diagram" location="Best_Engin_Diagram.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
   <bpel:import namespace="http://best_engine.com/Best_Engin_Diagram/workflow" location="Best_Engin_Diagram-workflow.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
   <bpel:import namespace="http://ws_package_Repair_ws.lti.epfl.ch" location="Downloads/Repair_ws.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
@@ -8,14 +8,26 @@
     <bpel:partnerLink name="web_serverAndWorkflowForPortRepair_wsPlkVar" partnerLinkType="diag:web_serverAndWorkflowForPortRepair_wsPlk" initializePartnerRole="yes" partnerRole="web_server_for_workflow"/>
   </bpel:partnerLinks>
   <bpel:variables>
-    <bpel:variable name="thisEventStartMessageRequest" messageType="this:EventStartMessageRequest"/>
     <bpel:variable name="intfAnalyzeDiagnosticFileRequestMsg" messageType="intf:analyzeDiagnosticFileRequest"/>
     <bpel:variable name="intfAnalyzeDiagnosticFileResponseMsg" messageType="intf:analyzeDiagnosticFileResponse"/>
-    <bpel:variable name="thisEventStartMessageResponse" messageType="this:EventStartMessageResponse"/>
     <bpel:variable name="intfGetPartIdFromDiagnosticFileRequestMsg" messageType="intf:getPartIdFromDiagnosticFileRequest"/>
     <bpel:variable name="intfGetPartIdFromDiagnosticFileResponseMsg" messageType="intf:getPartIdFromDiagnosticFileResponse"/>
     <bpel:variable name="intfGetAvailabilityOfPartRequestMsg" messageType="intf:getAvailabilityOfPartRequest"/>
     <bpel:variable name="intfGetAvailabilityOfPartResponseMsg" messageType="intf:getAvailabilityOfPartResponse"/>
+    <bpel:variable name="intfGetGarageIdFromDiagnosticFileRequestMsg" messageType="intf:getGarageIdFromDiagnosticFileRequest"/>
+    <bpel:variable name="intfGetGarageIdFromDiagnosticFileResponseMsg" messageType="intf:getGarageIdFromDiagnosticFileResponse"/>
+    <bpel:variable name="intfGetAddressOfGarageRequestMsg" messageType="intf:getAddressOfGarageRequest"/>
+    <bpel:variable name="intfGetAddressOfGarageResponseMsg" messageType="intf:getAddressOfGarageResponse"/>
+    <bpel:variable name="intfGetShippingInfoOfPartRequestMsg" messageType="intf:getShippingInfoOfPartRequest"/>
+    <bpel:variable name="intfGetShippingInfoOfPartResponseMsg" messageType="intf:getShippingInfoOfPartResponse"/>
+    <bpel:variable name="intfGetDeliveryDateOfShippingRequestMsg" messageType="intf:getDeliveryDateOfShippingRequest"/>
+    <bpel:variable name="intfGetDeliveryDateOfShippingResponseMsg" messageType="intf:getDeliveryDateOfShippingResponse"/>
+    <bpel:variable name="intfGetNameOfCertifiedTechnicianRequestMsg" messageType="intf:getNameOfCertifiedTechnicianRequest"/>
+    <bpel:variable name="intfGetNameOfCertifiedTechnicianResponseMsg" messageType="intf:getNameOfCertifiedTechnicianResponse"/>
+    <bpel:variable name="intfReserveTechnicianRequestMsg" messageType="intf:reserveTechnicianRequest"/>
+    <bpel:variable name="intfReserveTechnicianResponseMsg" messageType="intf:reserveTechnicianResponse"/>
+    <bpel:variable name="thisEventStartMessageResponse" messageType="this:EventStartMessageResponse"/>
+    <bpel:variable name="thisEventStartMessageRequest" messageType="this:EventStartMessageRequest"/>
   </bpel:variables>
   <bpel:sequence>
     <bpel:receive partnerLink="workflowAndUserPlkVar" portType="this:Foruser" operation="EventStartMessage" variable="thisEventStartMessageRequest" createInstance="yes" bpmn:label="Message_Start_Event" name="Message_Start_Event" bpmn:id="_7AafwNtfEeOp7bPSlow6GQ"></bpel:receive>
@@ -28,13 +40,6 @@
 </intf:analyzeDiagnosticFile></bpel:literal>
         </bpel:from>
         <bpel:to>$intfAnalyzeDiagnosticFileRequestMsg.parameters</bpel:to>
-      </bpel:copy>
-      <bpel:copy bpmn:label="$thisEventStartMessageResponse">
-        <bpel:from>
-          <bpel:literal>
-<this:EventStartMessageResponse></this:EventStartMessageResponse></bpel:literal>
-        </bpel:from>
-        <bpel:to>$thisEventStartMessageResponse.body</bpel:to>
       </bpel:copy>
       <bpel:copy bpmn:label="$intfGetPartIdFromDiagnosticFileRequestMsg">
         <bpel:from>
@@ -54,6 +59,83 @@
 </intf:getAvailabilityOfPart></bpel:literal>
         </bpel:from>
         <bpel:to>$intfGetAvailabilityOfPartRequestMsg.parameters</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$intfGetGarageIdFromDiagnosticFileRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<intf:getGarageIdFromDiagnosticFile>
+  <intf:aFileId></intf:aFileId>
+</intf:getGarageIdFromDiagnosticFile></bpel:literal>
+        </bpel:from>
+        <bpel:to>$intfGetGarageIdFromDiagnosticFileRequestMsg.parameters</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$intfGetAddressOfGarageRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<intf:getAddressOfGarage>
+  <intf:aFileId></intf:aFileId>
+  <intf:aGarageId></intf:aGarageId>
+</intf:getAddressOfGarage></bpel:literal>
+        </bpel:from>
+        <bpel:to>$intfGetAddressOfGarageRequestMsg.parameters</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$intfGetShippingInfoOfPartRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<intf:getShippingInfoOfPart>
+  <intf:aFileId></intf:aFileId>
+  <intf:aPartId></intf:aPartId>
+</intf:getShippingInfoOfPart></bpel:literal>
+        </bpel:from>
+        <bpel:to>$intfGetShippingInfoOfPartRequestMsg.parameters</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$intfGetDeliveryDateOfShippingRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<intf:getDeliveryDateOfShipping>
+  <intf:aDate></intf:aDate>
+  <intf:aAddress></intf:aAddress>
+  <intf:aShippingInfo></intf:aShippingInfo>
+  <intf:aReference></intf:aReference>
+</intf:getDeliveryDateOfShipping></bpel:literal>
+        </bpel:from>
+        <bpel:to>$intfGetDeliveryDateOfShippingRequestMsg.parameters</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$intfGetNameOfCertifiedTechnicianRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<intf:getNameOfCertifiedTechnician></intf:getNameOfCertifiedTechnician></bpel:literal>
+        </bpel:from>
+        <bpel:to>$intfGetNameOfCertifiedTechnicianRequestMsg.parameters</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$intfReserveTechnicianRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<intf:reserveTechnician>
+  <intf:aTechnicianName></intf:aTechnicianName>
+  <intf:aDate></intf:aDate>
+  <intf:aReference></intf:aReference>
+</intf:reserveTechnician></bpel:literal>
+        </bpel:from>
+        <bpel:to>$intfReserveTechnicianRequestMsg.parameters</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$thisEventStartMessageResponse">
+        <bpel:from>
+          <bpel:literal>
+<this:EventStartMessageResponse>
+  <tns:company></tns:company>
+  <tns:analysis></tns:analysis>
+  <tns:partID></tns:partID>
+  <tns:partAvailability></tns:partAvailability>
+  <tns:garageID></tns:garageID>
+  <tns:garageAddr></tns:garageAddr>
+  <tns:shippingInfo></tns:shippingInfo>
+  <tns:deliveryDate></tns:deliveryDate>
+  <tns:technicianName></tns:technicianName>
+  <tns:reservationID></tns:reservationID>
+</this:EventStartMessageResponse></bpel:literal>
+        </bpel:from>
+        <bpel:to>$thisEventStartMessageResponse.body</bpel:to>
       </bpel:copy>
     </bpel:assign>
     <bpel:assign bpmn:label="Invoke Analysis" name="Invoke_Analysis" bpmn:id="_5AYhsNtfEeOp7bPSlow6GQ">
@@ -81,10 +163,102 @@
       </bpel:copy>
     </bpel:assign>
     <bpel:invoke partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" operation="getAvailabilityOfPart" inputVariable="intfGetAvailabilityOfPartRequestMsg" outputVariable="intfGetAvailabilityOfPartResponseMsg" bpmn:label="Invoke Availabilty" name="Invoke_Availabilty-1" bpmn:id="_zgxzgNthEeOp7bPSlow6GQ"></bpel:invoke>
-    <bpel:assign bpmn:label="Message_End_Event" name="Message_End_Event" bpmn:id="_751bENtfEeOp7bPSlow6GQ">
+    <bpel:assign bpmn:label="Invoke getGarageID" name="Invoke_getGarageID" bpmn:id="_WtmbsNtkEeOp7bPSlow6GQ">
+      <bpel:copy>
+        <bpel:from>$intfAnalyzeDiagnosticFileResponseMsg.parameters/intf:analyzeDiagnosticFileReturn/text()</bpel:from>
+        <bpel:to>$intfGetGarageIdFromDiagnosticFileRequestMsg.parameters/intf:aFileId</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:invoke partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" operation="getGarageIdFromDiagnosticFile" inputVariable="intfGetGarageIdFromDiagnosticFileRequestMsg" outputVariable="intfGetGarageIdFromDiagnosticFileResponseMsg" bpmn:label="Invoke getGarageID" name="Invoke_getGarageID-1" bpmn:id="_WtmbsNtkEeOp7bPSlow6GQ"></bpel:invoke>
+    <bpel:assign bpmn:label="Invoke getGarageAddr" name="Invoke_getGarageAddr" bpmn:id="_63S-oPX7EeOoEeARBkQZlQ">
+      <bpel:copy>
+        <bpel:from>$intfAnalyzeDiagnosticFileResponseMsg.parameters/intf:analyzeDiagnosticFileReturn/text()</bpel:from>
+        <bpel:to>$intfGetAddressOfGarageRequestMsg.parameters/intf:aFileId</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$intfGetGarageIdFromDiagnosticFileResponseMsg.parameters/intf:getGarageIdFromDiagnosticFileReturn/text()</bpel:from>
+        <bpel:to>$intfGetAddressOfGarageRequestMsg.parameters/intf:aGarageId</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:invoke partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" operation="getAddressOfGarage" inputVariable="intfGetAddressOfGarageRequestMsg" outputVariable="intfGetAddressOfGarageResponseMsg" bpmn:label="Invoke getGarageAddr" name="Invoke_getGarageAddr-1" bpmn:id="_63S-oPX7EeOoEeARBkQZlQ"></bpel:invoke>
+    <bpel:assign bpmn:label="Invoke getShippingInfo" name="Invoke_getShippingInfo" bpmn:id="_FWr5MPX9EeOoEeARBkQZlQ">
+      <bpel:copy>
+        <bpel:from>$intfAnalyzeDiagnosticFileResponseMsg.parameters/intf:analyzeDiagnosticFileReturn/text()</bpel:from>
+        <bpel:to>$intfGetShippingInfoOfPartRequestMsg.parameters/intf:aFileId</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$intfGetPartIdFromDiagnosticFileResponseMsg.parameters/intf:getPartIdFromDiagnosticFileReturn/text()</bpel:from>
+        <bpel:to>$intfGetShippingInfoOfPartRequestMsg.parameters/intf:aPartId</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:invoke partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" operation="getShippingInfoOfPart" inputVariable="intfGetShippingInfoOfPartRequestMsg" outputVariable="intfGetShippingInfoOfPartResponseMsg" bpmn:label="Invoke getShippingInfo" name="Invoke_getShippingInfo-1" bpmn:id="_FWr5MPX9EeOoEeARBkQZlQ"></bpel:invoke>
+    <bpel:assign bpmn:label="Invoke getDelivery" name="Invoke_getDelivery" bpmn:id="_Jx0yUPX-EeOoEeARBkQZlQ">
       <bpel:copy>
         <bpel:from>$intfGetAvailabilityOfPartResponseMsg.parameters/intf:getAvailabilityOfPartReturn/text()</bpel:from>
-        <bpel:to>$thisEventStartMessageResponse.body</bpel:to>
+        <bpel:to>$intfGetDeliveryDateOfShippingRequestMsg.parameters/intf:aDate</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$intfGetAddressOfGarageResponseMsg.parameters/intf:getAddressOfGarageReturn/text()</bpel:from>
+        <bpel:to>$intfGetDeliveryDateOfShippingRequestMsg.parameters/intf:aAddress</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$intfGetShippingInfoOfPartResponseMsg.parameters/intf:getShippingInfoOfPartReturn/text()</bpel:from>
+        <bpel:to>$intfGetDeliveryDateOfShippingRequestMsg.parameters/intf:aShippingInfo</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:invoke partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" operation="getDeliveryDateOfShipping" inputVariable="intfGetDeliveryDateOfShippingRequestMsg" outputVariable="intfGetDeliveryDateOfShippingResponseMsg" bpmn:label="Invoke getDelivery" name="Invoke_getDelivery-1" bpmn:id="_Jx0yUPX-EeOoEeARBkQZlQ"></bpel:invoke>
+    <bpel:invoke partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" operation="getNameOfCertifiedTechnician" inputVariable="intfGetNameOfCertifiedTechnicianRequestMsg" outputVariable="intfGetNameOfCertifiedTechnicianResponseMsg" bpmn:label="Invoke getTechName" name="Invoke_getTechName" bpmn:id="_xFKO0PX-EeOoEeARBkQZlQ"></bpel:invoke>
+    <bpel:assign bpmn:label="Invoke reserveTech" name="Invoke_reserveTech" bpmn:id="_xY1YwPX-EeOoEeARBkQZlQ">
+      <bpel:copy>
+        <bpel:from>$intfGetNameOfCertifiedTechnicianResponseMsg.parameters/intf:getNameOfCertifiedTechnicianReturn/text()</bpel:from>
+        <bpel:to>$intfReserveTechnicianRequestMsg.parameters/intf:aTechnicianName</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$intfGetDeliveryDateOfShippingResponseMsg.parameters/intf:getDeliveryDateOfShippingReturn/text()</bpel:from>
+        <bpel:to>$intfReserveTechnicianRequestMsg.parameters/intf:aDate</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:invoke partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" operation="reserveTechnician" inputVariable="intfReserveTechnicianRequestMsg" outputVariable="intfReserveTechnicianResponseMsg" bpmn:label="Invoke reserveTech" name="Invoke_reserveTech-1" bpmn:id="_xY1YwPX-EeOoEeARBkQZlQ"></bpel:invoke>
+    <bpel:assign bpmn:label="Message_End_Event" name="Message_End_Event" bpmn:id="_751bENtfEeOp7bPSlow6GQ">
+      <bpel:copy>
+        <bpel:from>$intfAnalyzeDiagnosticFileRequestMsg.parameters/intf:aCompanyId/text()</bpel:from>
+        <bpel:to>$thisEventStartMessageResponse.body/tns:company</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$intfGetPartIdFromDiagnosticFileResponseMsg.parameters/intf:getPartIdFromDiagnosticFileReturn/text()</bpel:from>
+        <bpel:to>$thisEventStartMessageResponse.body/tns:partID</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$intfAnalyzeDiagnosticFileResponseMsg.parameters/intf:analyzeDiagnosticFileReturn/text()</bpel:from>
+        <bpel:to>$thisEventStartMessageResponse.body/tns:analysis</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$intfGetAvailabilityOfPartResponseMsg.parameters/intf:getAvailabilityOfPartReturn/text()</bpel:from>
+        <bpel:to>$thisEventStartMessageResponse.body/tns:partAvailability</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$intfGetGarageIdFromDiagnosticFileResponseMsg.parameters/intf:getGarageIdFromDiagnosticFileReturn/text()</bpel:from>
+        <bpel:to>$thisEventStartMessageResponse.body/tns:garageID</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$intfGetAddressOfGarageResponseMsg.parameters/intf:getAddressOfGarageReturn/text()</bpel:from>
+        <bpel:to>$thisEventStartMessageResponse.body/tns:garageAddr</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$intfGetShippingInfoOfPartResponseMsg.parameters/intf:getShippingInfoOfPartReturn/text()</bpel:from>
+        <bpel:to>$thisEventStartMessageResponse.body/tns:shippingInfo</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$intfGetDeliveryDateOfShippingResponseMsg.parameters/intf:getDeliveryDateOfShippingReturn/text()</bpel:from>
+        <bpel:to>$thisEventStartMessageResponse.body/tns:deliveryDate</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$intfGetNameOfCertifiedTechnicianResponseMsg.parameters/intf:getNameOfCertifiedTechnicianReturn/text()</bpel:from>
+        <bpel:to>$thisEventStartMessageResponse.body/tns:technicianName</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$intfReserveTechnicianResponseMsg.parameters/intf:reserveTechnicianReturn/text()</bpel:from>
+        <bpel:to>$thisEventStartMessageResponse.body/tns:reservationID</bpel:to>
       </bpel:copy>
     </bpel:assign>
     <bpel:reply partnerLink="workflowAndUserPlkVar" portType="this:Foruser" operation="EventStartMessage" variable="thisEventStartMessageResponse" bpmn:label="Message_End_Event" name="Message_End_Event-1" bpmn:id="_751bENtfEeOp7bPSlow6GQ"></bpel:reply>

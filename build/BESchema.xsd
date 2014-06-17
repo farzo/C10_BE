@@ -6,6 +6,20 @@
  <element name="aCompanyId" type="string"></element> 
 
  <element name="analysis" type="string"></element> 
-
+<complexType name="ParOut"> 
+<sequence>
+<element name="company" type="string"></element>
+<element name="analysis" type="string"></element>
+<element name="partID" type="string"></element>
+<element name="partAvailability" type="string"></element>
+<element name="garageID" type="string"></element>
+<element name="garageAddr" type="string"></element>
+<element name="shippingInfo" type="string"></element>
+<element name="deliveryDate" type="string"></element>
+<element name="technicianName" type="string"></element>
+<element name="reservationID" type="string"></element>
+ 
+</sequence>
+</complexType>
 
 </schema>

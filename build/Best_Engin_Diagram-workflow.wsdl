@@ -1,9 +1,10 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:this="http://best_engine.com/Best_Engin_Diagram/workflow" xmlns:intf="http://ws_package_Repair_ws.lti.epfl.ch" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:user="http://best_engine.com/Best_Engin_Diagram/user" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web_server="http://best_engine.com/Best_Engin_Diagram/web_server" xmlns:diag="http://best_engine.com/Best_Engin_Diagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://best_engine.com/Best_Engin_Diagram/workflow">
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:this="http://best_engine.com/Best_Engin_Diagram/workflow" xmlns:tns="http://www.example.org/BESchema" xmlns:intf="http://ws_package_Repair_ws.lti.epfl.ch" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:user="http://best_engine.com/Best_Engin_Diagram/user" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web_server="http://best_engine.com/Best_Engin_Diagram/web_server" xmlns:diag="http://best_engine.com/Best_Engin_Diagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://best_engine.com/Best_Engin_Diagram/workflow">
     <wsdl:types>
         <xs:schema elementFormDefault="qualified" targetNamespace="http://best_engine.com/Best_Engin_Diagram/workflow">
+            <xs:import namespace="http://www.example.org/BESchema" schemaLocation="BESchema.xsd"/>
             <xs:element name="EventStartMessageRequest" type="xs:string"/>
-            <xs:element name="EventStartMessageResponse" type="xs:string"/>
+            <xs:element name="EventStartMessageResponse" type="tns:ParOut"/>
         </xs:schema>
     </wsdl:types>
     <wsdl:message name="EventStartMessageRequest">

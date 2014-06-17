@@ -13,7 +13,7 @@
     </bpdm:dependencies>
     <bpel:scope bpdm:label="web server" bpdm:ID="_mPHMcNndEeORaLAw4oWmKg">
         <bpel:partnerLinks>
-            <bpel:partnerLink name="web_serverAndWorkflowForPortRepair_wsPlkVar" partnerLinkType="diag:web_serverAndWorkflowForPortRepair_wsPlk" myRole="web_server_for_workflow" bpdm:enableSharing="false" bpdm:providedService="intf:Repair_wsService" bpdm:providedPort="Repair_ws" bpdm:provideSOAPAddress="http://lams-esoa-world.epfl.ch:8180/ws_2012_1/services/Repair_ws" bpdm:providedIsDefault="true" bpdm:clientTasks="_mPHMcNndEeORaLAw4oWmKg:_-Rdu4NthEeOp7bPSlow6GQ, _mPHMcNndEeORaLAw4oWmKg:_RStnsdthEeOp7bPSlow6GQ, _mPHMcNndEeORaLAw4oWmKg:_KFCVgNtgEeOp7bPSlow6GQ" bpdm:isManaged="true" bpdm:otherPoolId="_lVQzUNndEeORaLAw4oWmKg"/>
+            <bpel:partnerLink name="web_serverAndWorkflowForPortRepair_wsPlkVar" partnerLinkType="diag:web_serverAndWorkflowForPortRepair_wsPlk" myRole="web_server_for_workflow" bpdm:enableSharing="false" bpdm:providedService="intf:Repair_wsService" bpdm:providedPort="Repair_ws" bpdm:provideSOAPAddress="http://lams-esoa-world.epfl.ch:8180/ws_2012_1/services/Repair_ws" bpdm:providedIsDefault="true" bpdm:clientTasks="_mPHMcNndEeORaLAw4oWmKg:_60JcoPX-EeOoEeARBkQZlQ, _mPHMcNndEeORaLAw4oWmKg:_-Rdu4NthEeOp7bPSlow6GQ, _mPHMcNndEeORaLAw4oWmKg:_RStnsdthEeOp7bPSlow6GQ, _mPHMcNndEeORaLAw4oWmKg:_OPROAPX-EeOoEeARBkQZlQ, _mPHMcNndEeORaLAw4oWmKg:_JbcvIPX9EeOoEeARBkQZlQ, _mPHMcNndEeORaLAw4oWmKg:_eLKkAdtlEeOp7bPSlow6GQ, _mPHMcNndEeORaLAw4oWmKg:_7pkowPX-EeOoEeARBkQZlQ, _mPHMcNndEeORaLAw4oWmKg:_KFCVgNtgEeOp7bPSlow6GQ, _mPHMcNndEeORaLAw4oWmKg:_HWzMQPX8EeOoEeARBkQZlQ" bpdm:isManaged="true" bpdm:otherPoolId="_lVQzUNndEeORaLAw4oWmKg"/>
         </bpel:partnerLinks>
         <bpel:variables>
             <bpel:variable name="intfAnalyzeDiagnosticFileRequestMsg" messageType="intf:analyzeDiagnosticFileRequest" binding="intf:Repair_wsSoapBinding" operation="analyzeDiagnosticFile" opMsgType="0" bpdm:id="_Lo-NcNtgEeOp7bPSlow6GQ" bpdm:messageIds="inc:_LomaANtgEeOp7bPSlow6GQ"/>
@@ -34,14 +34,44 @@
                     <bpel:literal bpdm:linkedMessageType="intf:getAvailabilityOfPartResponse" bpdm:linkedPart="parameters" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:opMsgType="1" bpdm:operation="getAvailabilityOfPart"></bpel:literal>
                 </bpel:from>
             </bpel:variable>
+            <bpel:variable name="intfGetGarageIdFromDiagnosticFileRequestMsg" messageType="intf:getGarageIdFromDiagnosticFileRequest" binding="intf:Repair_wsSoapBinding" operation="getGarageIdFromDiagnosticFile" opMsgType="0" bpdm:id="_ngAzgNtlEeOp7bPSlow6GQ" bpdm:messageIds="inc:_nfOJUNtlEeOp7bPSlow6GQ"/>
+            <bpel:variable name="intfGetGarageIdFromDiagnosticFileResponseMsg" messageType="intf:getGarageIdFromDiagnosticFileResponse" binding="intf:Repair_wsSoapBinding" operation="getGarageIdFromDiagnosticFile" opMsgType="1" bpdm:id="_oTF2QNtlEeOp7bPSlow6GQ" bpdm:messageIds=" out:_oSwfENtlEeOp7bPSlow6GQ">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="intf:getGarageIdFromDiagnosticFileResponse" bpdm:linkedPart="parameters" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:opMsgType="1" bpdm:operation="getGarageIdFromDiagnosticFile"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="intfGetAddressOfGarageRequestMsg" messageType="intf:getAddressOfGarageRequest" binding="intf:Repair_wsSoapBinding" operation="getAddressOfGarage" opMsgType="0" bpdm:id="_JYqWVfX8EeOoEeARBkQZlQ" bpdm:messageIds="inc:_JWWpMPX8EeOoEeARBkQZlQ"/>
+            <bpel:variable name="intfGetAddressOfGarageResponseMsg" messageType="intf:getAddressOfGarageResponse" binding="intf:Repair_wsSoapBinding" operation="getAddressOfGarage" opMsgType="1" bpdm:id="_MQVHAPX8EeOoEeARBkQZlQ" bpdm:messageIds=" out:_MOwZsPX8EeOoEeARBkQZlQ">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="intf:getAddressOfGarageResponse" bpdm:linkedPart="parameters" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:opMsgType="1" bpdm:operation="getAddressOfGarage"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="intfGetShippingInfoOfPartRequestMsg" messageType="intf:getShippingInfoOfPartRequest" binding="intf:Repair_wsSoapBinding" operation="getShippingInfoOfPart" opMsgType="0" bpdm:id="_Kxxo4PX9EeOoEeARBkQZlQ" bpdm:messageIds="inc:_KvnswPX9EeOoEeARBkQZlQ"/>
+            <bpel:variable name="intfGetShippingInfoOfPartResponseMsg" messageType="intf:getShippingInfoOfPartResponse" binding="intf:Repair_wsSoapBinding" operation="getShippingInfoOfPart" opMsgType="1" bpdm:id="_LR4FQPX9EeOoEeARBkQZlQ" bpdm:messageIds=" out:_LQ2KgPX9EeOoEeARBkQZlQ">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="intf:getShippingInfoOfPartResponse" bpdm:linkedPart="parameters" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:opMsgType="1" bpdm:operation="getShippingInfoOfPart"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="intfGetDeliveryDateOfShippingRequestMsg" messageType="intf:getDeliveryDateOfShippingRequest" binding="intf:Repair_wsSoapBinding" operation="getDeliveryDateOfShipping" opMsgType="0" bpdm:id="_PhlKcPX-EeOoEeARBkQZlQ" bpdm:messageIds="inc:_PfKvoPX-EeOoEeARBkQZlQ"/>
+            <bpel:variable name="intfGetDeliveryDateOfShippingResponseMsg" messageType="intf:getDeliveryDateOfShippingResponse" binding="intf:Repair_wsSoapBinding" operation="getDeliveryDateOfShipping" opMsgType="1" bpdm:id="_QABZ8PX-EeOoEeARBkQZlQ" bpdm:messageIds=" out:_P_DJkPX-EeOoEeARBkQZlQ">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="intf:getDeliveryDateOfShippingResponse" bpdm:linkedPart="parameters" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:opMsgType="1" bpdm:operation="getDeliveryDateOfShipping"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="intfGetNameOfCertifiedTechnicianRequestMsg" messageType="intf:getNameOfCertifiedTechnicianRequest" binding="intf:Repair_wsSoapBinding" operation="getNameOfCertifiedTechnician" opMsgType="0" bpdm:id="_8-XRdfX-EeOoEeARBkQZlQ" bpdm:messageIds="inc:_871h4PX-EeOoEeARBkQZlQ"/>
+            <bpel:variable name="intfGetNameOfCertifiedTechnicianResponseMsg" messageType="intf:getNameOfCertifiedTechnicianResponse" binding="intf:Repair_wsSoapBinding" operation="getNameOfCertifiedTechnician" opMsgType="1" bpdm:id="_9f_-4PX-EeOoEeARBkQZlQ" bpdm:messageIds=" out:_9fBugPX-EeOoEeARBkQZlQ">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="intf:getNameOfCertifiedTechnicianResponse" bpdm:linkedPart="parameters" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:opMsgType="1" bpdm:operation="getNameOfCertifiedTechnician"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="intfReserveTechnicianRequestMsg" messageType="intf:reserveTechnicianRequest" binding="intf:Repair_wsSoapBinding" operation="reserveTechnician" opMsgType="0" bpdm:id="_-FobgPX-EeOoEeARBkQZlQ" bpdm:messageIds="inc:_-C3bYPX-EeOoEeARBkQZlQ"/>
+            <bpel:variable name="intfReserveTechnicianResponseMsg" messageType="intf:reserveTechnicianResponse" binding="intf:Repair_wsSoapBinding" operation="reserveTechnician" opMsgType="1" bpdm:id="_-pPe4PX-EeOoEeARBkQZlQ" bpdm:messageIds=" out:_-oIroPX-EeOoEeARBkQZlQ">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="intf:reserveTechnicianResponse" bpdm:linkedPart="parameters" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:opMsgType="1" bpdm:operation="reserveTechnician"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
         </bpel:variables>
         <bpel:flow>
-            <bpel:sequence>
-                <bpdm:messagingtask operation="getAvailabilityOfPart" partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" isMyRole="true" enableSharing="false" bpdm:label="getAvailabilityOfPart" bpdm:ID="_-Rdu4NthEeOp7bPSlow6GQ">
-                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="intfGetAvailabilityOfPartRequestMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getAvailabilityOfPartRequest" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="__oXQYNthEeOp7bPSlow6GQ"></bpdm:linkset>
-                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="intfGetAvailabilityOfPartResponseMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getAvailabilityOfPartResponse" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_AKRqoNtiEeOp7bPSlow6GQ"></bpdm:linkset>
-                </bpdm:messagingtask>
-            </bpel:sequence>
             <bpel:sequence>
                 <bpdm:messagingtask operation="analyzeDiagnosticFile" partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" isMyRole="true" enableSharing="false" bpdm:label="analyzeDiagnosticFile" bpdm:ID="_KFCVgNtgEeOp7bPSlow6GQ">
                     <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="intfAnalyzeDiagnosticFileRequestMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:analyzeDiagnosticFileRequest" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_LomaANtgEeOp7bPSlow6GQ"></bpdm:linkset>
@@ -49,9 +79,51 @@
                 </bpdm:messagingtask>
             </bpel:sequence>
             <bpel:sequence>
+                <bpdm:messagingtask operation="getDeliveryDateOfShipping" partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" isMyRole="true" enableSharing="false" bpdm:label="getDeliveryDateOfShipping" bpdm:ID="_OPROAPX-EeOoEeARBkQZlQ">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="intfGetDeliveryDateOfShippingRequestMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getDeliveryDateOfShippingRequest" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_PfKvoPX-EeOoEeARBkQZlQ"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="intfGetDeliveryDateOfShippingResponseMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getDeliveryDateOfShippingResponse" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_P_DJkPX-EeOoEeARBkQZlQ"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="getNameOfCertifiedTechnician" partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" isMyRole="true" enableSharing="false" bpdm:label="getNameOfCertifiedTechnician" bpdm:ID="_60JcoPX-EeOoEeARBkQZlQ">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="intfGetNameOfCertifiedTechnicianRequestMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getNameOfCertifiedTechnicianRequest" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_871h4PX-EeOoEeARBkQZlQ"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="intfGetNameOfCertifiedTechnicianResponseMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getNameOfCertifiedTechnicianResponse" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_9fBugPX-EeOoEeARBkQZlQ"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="getAvailabilityOfPart" partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" isMyRole="true" enableSharing="false" bpdm:label="getAvailabilityOfPart" bpdm:ID="_-Rdu4NthEeOp7bPSlow6GQ">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="intfGetAvailabilityOfPartRequestMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getAvailabilityOfPartRequest" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="__oXQYNthEeOp7bPSlow6GQ"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="intfGetAvailabilityOfPartResponseMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getAvailabilityOfPartResponse" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_AKRqoNtiEeOp7bPSlow6GQ"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
                 <bpdm:messagingtask operation="getPartIdFromDiagnosticFile" partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" isMyRole="true" enableSharing="false" bpdm:label="getPartIdFromDiagnosticFile" bpdm:ID="_RStnsdthEeOp7bPSlow6GQ">
                     <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="intfGetPartIdFromDiagnosticFileRequestMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getPartIdFromDiagnosticFileRequest" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_SVf6YNthEeOp7bPSlow6GQ"></bpdm:linkset>
                     <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="intfGetPartIdFromDiagnosticFileResponseMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getPartIdFromDiagnosticFileResponse" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_TncqcNthEeOp7bPSlow6GQ"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="getAddressOfGarage" partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" isMyRole="true" enableSharing="false" bpdm:label="getAddressOfGarage" bpdm:ID="_HWzMQPX8EeOoEeARBkQZlQ">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="intfGetAddressOfGarageRequestMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getAddressOfGarageRequest" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_JWWpMPX8EeOoEeARBkQZlQ"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="intfGetAddressOfGarageResponseMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getAddressOfGarageResponse" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_MOwZsPX8EeOoEeARBkQZlQ"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="reserveTechnician" partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" isMyRole="true" enableSharing="false" bpdm:label="reserveTechnician" bpdm:ID="_7pkowPX-EeOoEeARBkQZlQ">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="intfReserveTechnicianRequestMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:reserveTechnicianRequest" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_-C3bYPX-EeOoEeARBkQZlQ"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="intfReserveTechnicianResponseMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:reserveTechnicianResponse" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_-oIroPX-EeOoEeARBkQZlQ"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="getShippingInfoOfPart" partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" isMyRole="true" enableSharing="false" bpdm:label="getShippingInfoOfPart" bpdm:ID="_JbcvIPX9EeOoEeARBkQZlQ">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="intfGetShippingInfoOfPartRequestMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getShippingInfoOfPartRequest" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_KvnswPX9EeOoEeARBkQZlQ"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="intfGetShippingInfoOfPartResponseMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getShippingInfoOfPartResponse" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_LQ2KgPX9EeOoEeARBkQZlQ"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="getGarageIdFromDiagnosticFile" partnerLink="web_serverAndWorkflowForPortRepair_wsPlkVar" portType="intf:Repair_ws" isMyRole="true" enableSharing="false" bpdm:label="getGarageIdFromDiagnosticFile" bpdm:ID="_eLKkAdtlEeOp7bPSlow6GQ">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="intfGetGarageIdFromDiagnosticFileRequestMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getGarageIdFromDiagnosticFileRequest" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_nfOJUNtlEeOp7bPSlow6GQ"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="intfGetGarageIdFromDiagnosticFileResponseMsg" bpdm:msgVarScopeId="_mPHMcNndEeORaLAw4oWmKg" bpdm:variableIsManaged="true" bpdm:messageType="intf:getGarageIdFromDiagnosticFileResponse" bpdm:binding="intf:Repair_wsSoapBinding" bpdm:ID="_oSwfENtlEeOp7bPSlow6GQ"></bpdm:linkset>
                 </bpdm:messagingtask>
             </bpel:sequence>
         </bpel:flow>
